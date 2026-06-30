@@ -1,45 +1,83 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Můj veřejný Google Kalendář">
-  <title>Můj kalendář</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Můj kalendář</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #18181b, #27272a);
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            padding: 50px 30px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 42px;
+        }
+
+        p {
+            color: #d4d4d8;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 28px;
+            border-radius: 10px;
+            background-color: #ad1457;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background-color: #c2185b;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="header-content">
-      <div>
-        <p class="eyebrow">Přehled událostí</p>
-        <h1>Můj kalendář</h1>
-      </div>
 
-      <a
-        class="calendar-link"
-        href="https://calendar.google.com/calendar/u/0/r"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Otevřít Google Kalendář
-      </a>
-    </div>
-  </header>
+    <main class="container">
+        <h1>Můj Google kalendář</h1>
 
-  <main class="page-content">
-    <section class="calendar-card" aria-label="Google Kalendář">
-      <iframe
-        src="https://calendar.google.com/calendar/embed?src=502a245f6ff913c8f269953e4cbb393ca859c19eb18bbb16d8843b3be52fd556%40group.calendar.google.com&ctz=Europe%2FPrague"
-        title="Můj Google Kalendář"
-        frameborder="0"
-        scrolling="no"
-        loading="lazy"
-      ></iframe>
-    </section>
-  </main>
+        <p>
+            Zde můžeš zobrazit plánované události,
+            přepínat týdny a měsíce a otevřít kalendář.
+        </p>
 
-  <footer class="site-footer">
-    <p>Časové pásmo: Evropa / Praha</p>
-  </footer>
+        <a class="button" href="hlavniKod.html">
+            Otevřít kalendář
+        </a>
+    </main>
+
 </body>
 </html>
