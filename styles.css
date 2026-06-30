@@ -1,126 +1,127 @@
-* {
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-:root {
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #172033;
-  background: #f4f6fb;
-}
+    <title>Kalendář</title>
 
-body {
-  min-height: 100vh;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-.site-header {
-  background: #ffffff;
-  border-bottom: 1px solid #dfe4ee;
-}
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #18181b;
+            color: white;
+        }
 
-.header-content {
-  width: min(1200px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 24px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 5%;
+            background-color: #27272a;
+            border-bottom: 1px solid #3f3f46;
+        }
 
-.eyebrow {
-  margin: 0 0 4px;
-  color: #5f6f8d;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
+        header h1 {
+            margin: 0;
+            font-size: 25px;
+        }
 
-h1 {
-  margin: 0;
-  font-size: clamp(1.7rem, 4vw, 2.5rem);
-}
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
 
-.calendar-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0 18px;
-  border-radius: 10px;
-  background: #1a73e8;
-  color: #ffffff;
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: transform 0.15s ease, background 0.15s ease;
-}
+        .button {
+            display: inline-block;
+            padding: 11px 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ad1457;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-.calendar-link:hover {
-  background: #155fc0;
-  transform: translateY(-1px);
-}
+        .button.secondary {
+            background-color: #52525b;
+        }
 
-.page-content {
-  flex: 1;
-  width: min(1200px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 32px 0;
-}
+        .button:hover {
+            opacity: 0.85;
+        }
 
-.calendar-card {
-  overflow: hidden;
-  min-height: 720px;
-  border: 1px solid #dfe4ee;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 14px 40px rgba(23, 32, 51, 0.08);
-}
+        .calendar-container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 12px;
+            background-color: white;
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+        }
 
-.calendar-card iframe {
-  display: block;
-  width: 100%;
-  height: 78vh;
-  min-height: 720px;
-  border: 0;
-}
+        iframe {
+            display: block;
+            width: 100%;
+            height: 75vh;
+            min-height: 600px;
+            border: none;
+            border-radius: 8px;
+        }
 
-.site-footer {
-  padding: 20px 16px;
-  color: #667085;
-  text-align: center;
-  font-size: 0.9rem;
-}
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
 
-.site-footer p {
-  margin: 0;
-}
+            iframe {
+                height: 75vh;
+                min-height: 500px;
+            }
+        }
+    </style>
+</head>
 
-@media (max-width: 640px) {
-  .header-content {
-    align-items: stretch;
-    flex-direction: column;
-  }
+<body>
 
-  .calendar-link {
-    width: 100%;
-  }
+    <header>
+        <h1>Můj kalendář</h1>
 
-  .page-content {
-    width: min(100% - 16px, 1200px);
-    padding: 16px 0;
-  }
+        <div class="buttons">
+            <a class="button secondary" href="index.html">
+                Zpět
+            </a>
 
-  .calendar-card {
-    min-height: 650px;
-    border-radius: 12px;
-  }
+            <a
+                class="button"
+                href="https://calendar.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Otevřít Google Kalendář
+            </a>
+        </div>
+    </header>
 
-  .calendar-card iframe {
-    height: 75vh;
-    min-height: 650px;
-  }
-}
+    <main class="calendar-container">
+        <iframe
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FPrague&showPrint=0&src=NTAyYTI0NWY2ZmY5MTNjOGYyNjk5NTNlNGNiYjM5M2NhODU5YzE5ZWIxOGJiYjE2ZDg4NDNiM2JlNTJmZDU1NkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23ad1457"
+            frameborder="0"
+            scrolling="no"
+            title="Google kalendář"
+        ></iframe>
+    </main>
+
+</body>
+</html>
